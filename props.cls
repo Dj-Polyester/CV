@@ -97,10 +97,13 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 \newcommand{\panel}[2]{
   \begin{tikzpicture}[remember picture,overlay]
     
-    \node [rectangle, fill=white, anchor=#1, xshift=-5.0mm, yshift=-5.0mm ] (box) at (current page.#1){
+    \node [draw=blue!80, thick,rectangle, fill=white, anchor=#1, xshift=-5.0mm, yshift=-5.0mm ] (box) at (current page.#1){
+        \bgroup
+        \def\arraystretch{1}
         \begin{tabular}{l}
             #2
         \end{tabular}
+        \egroup
     };
   \end{tikzpicture}
 }
@@ -142,3 +145,6 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 }
 
 \pagestyle{empty}
+
+%draw=blue!80, thick,
+%add above between nodes brackets to add blue border lines to the panel
